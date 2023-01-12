@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Inserciones {
 
-	int[] insercionOrdenada(int num, int tabla[]) {
+	public static int[] insercionOrdenada(int num, int tabla[]) {
 		int indiceInsercion=Arrays.binarySearch(tabla, num);
 		int copia[]=new int[tabla.length+1];
 		
@@ -19,6 +19,15 @@ public class Inserciones {
 		tabla=copia;
 		
 		return tabla;
+	}
+	
+	public static int[] unionArrays(int tabla1[], int tabla2[]) {
+		int tablaUnida[]= new int[tabla1.length+tabla2.length];
+		
+		System.arraycopy(tabla1, 0, tablaUnida, 0, tabla1.length);
+		System.arraycopy(tabla2, 0, tablaUnida, tabla1.length, tabla2.length);
+		
+		return tablaUnida;
 	}
 
 }

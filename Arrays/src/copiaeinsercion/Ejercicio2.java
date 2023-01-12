@@ -1,6 +1,7 @@
 package copiaeinsercion;
 
 import java.util.Arrays;
+import inserciones.Inserciones;
 
 public class Ejercicio2 {
 
@@ -16,21 +17,22 @@ public class Ejercicio2 {
 		
 		System.out.println(Arrays.toString(numeros));
 		
-		int pares[]=new int[20];
-		int impares[]=new int[20];
+		int pares[]=new int[0];
+		int impares[]=new int[0];
 		
-		int indicePares=0;
-		int indiceImpares=0;
 		
-		for(int numero : numeros) {
-			if (numero % 2 == 0) {
-				pares[indicePares] = numero;
-				indicePares++;
+		for(int i=0; i<numeros.length; i++) {
+			if (numeros[i] % 2 == 0) {
+				pares = Arrays.copyOf(pares, pares.length+1);
+				pares[pares.length-1] = numeros[i];
 			} else {
-				impares[indiceImpares] = numero;
-				indiceImpares++;
+				impares = Arrays.copyOf(impares, impares.length+1);
+				impares[impares.length-1] = numeros[i];
 			}
 		}
+		
+		System.out.println(Arrays.toString(Inserciones.unionArrays(pares,impares)));
+
 	}
 
 }
