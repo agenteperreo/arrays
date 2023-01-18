@@ -12,7 +12,7 @@ public class Ejercicio6 {
 		int posicion=0;
 		
 		//Generamos el primer array
-		for(int i=0; i<100; i++) {
+		for(int i=0; i<ascendente.length; i++) {
 			ascendente[i]=i+1;
 		}
 		
