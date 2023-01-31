@@ -80,33 +80,20 @@ public class Inserciones {
 		}
 	}
 
-	public static int[] eliminacionEnArraysNumero(int numABorrar, int[] tabla) {
+	public static void eliminacionEnArraysNumeroNO(int numABorrar, int[] tabla) {
+		
+		
 
-		// Posicionamiento del numero a borrar
-		int indiceBorrado;
-
-		// Buscamos la posicion del numero
-		indiceBorrado = Arrays.binarySearch(tabla, numABorrar);
-
-		//Mientras que el indice del numero a borrar sea mayor que 0
-		while (indiceBorrado > 0) {
-			
-			// Si el indice es mayor o igual que 0
-			if (indiceBorrado >= 0) {
-				// Desplazamos los elementos de la derecha una posición a la izquierda
-				System.arraycopy(tabla, indiceBorrado + 1, tabla, indiceBorrado, tabla.length - indiceBorrado - 1);
-
-				// Lo copiamos en otra tabla con una posicion menos
-				tabla = Arrays.copyOf(tabla, tabla.length - 1);
-
-				// Si es menor que 0
-			} else {
-				// Mostramos que no existe el numero en la tabla
-				System.out.println("No se encuentra el numero de la busqueda");
+		//Recorremos el array
+		for(int i=0; i<tabla.length; i++) {
+			if(tabla[i]==numABorrar) {
+				//Movemos los numeros de atras una posicion hacia adelante
+				System.arraycopy(tabla, i + 1, tabla, i, tabla.length - (1 + i));
+				
+				//Le quitamos uno de longitud al array
+				Arrays.copyOf(tabla, tabla.length - 1);
 			}
 		}
-		
-		return tabla;
 		
 	}
 

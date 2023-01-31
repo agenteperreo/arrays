@@ -24,7 +24,7 @@ public class Ejercicio3 {
 		System.out.println(Arrays.toString(lista));
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		// Declaración de variables
 		int numeros[] = new int[10];
@@ -57,7 +57,7 @@ public class Ejercicio3 {
 			case "b" -> {
 				System.out.print("¿Que numero quieres borrar?: ");
 				int numBorrar = sc.nextInt();
-				numeros = Inserciones.eliminacionEnArraysNumero(numBorrar, numeros);
+				Inserciones.eliminacionEnArraysNumeroNO(numBorrar, numeros);
 			}
 
 			case "c" -> {
@@ -73,9 +73,12 @@ public class Ejercicio3 {
 
 		// Nos despedimos
 		System.out.println("Hasta pronto.");
-		
-		//Cerramos el escaner
+
+		// Cerramos el escaner
 		sc.close();
+
+		Thread.sleep((long) (Math.random() * 100));
+
 	}
 
 }
