@@ -30,10 +30,13 @@ public class Funciones {
 			auxiliar[0] = "0";
 		}
 
-		// Si
+		// Si la ultima posicion no es una mina y la penultima posicion es una mina
 		if (auxiliar[auxiliar.length - 1].equals("-") && auxiliar[auxiliar.length - 2].equals("*")) {
+			//Ponemos 1 en la ultima poscion
 			auxiliar[auxiliar.length - 1] = "1";
+		//Si no	
 		} else {
+			//Ponemos 0 en la ultima posicion
 			auxiliar[auxiliar.length - 1] = "0";
 		}
 		

@@ -59,7 +59,7 @@ public class Main {
 		}
 
 		// Si ha hecho los movimientos maximos
-		if (returnCode==1)
+		if (returnCode==0)
 			System.out.println("¡¡¡Ganaste!!!");
 		else
 			//Mostramos que le ha explotado
